@@ -1,6 +1,18 @@
-*.class
+# Eclipse
+.classpath
+.project
+.settings/
+ 
+# Intellij
+.idea/
+*.iws
+ 
+# Mac
+.DS_Store
+ 
+# Maven
+log/
+target/
 
-# Package Files #
-*.jar
-*.war
-*.ear
+#Vaadin
+**/VAADIN/*
