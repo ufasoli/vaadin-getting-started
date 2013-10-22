@@ -15,9 +15,11 @@ import sun.awt.HorizBagLayout;
 @SuppressWarnings("serial")
 public class MyVaadinUI extends UI {
 
-    @WebServlet(value = "/*", asyncSupported = true)
+    @WebServlet(value = {"/myui/*", "/VAADIN/*"}, asyncSupported = true)
     @VaadinServletConfiguration(productionMode = false, ui = MyVaadinUI.class, widgetset = "com.trivadis.AppWidgetSet")
     public static class Servlet extends VaadinServlet {
+
+
     }
 
     @Override
@@ -32,8 +34,7 @@ public class MyVaadinUI extends UI {
         final TextField name2 = new TextField("Somebody's name");
         name2.setRequired(true);
 
-        layout.addComponent(name1);
-        layout.addComponent(name2);
+        layout.addComponent(name1);                   layout.addComponent(name2);
 
         Button button = new Button("Click Me");
         button.addClickListener(new Button.ClickListener() {
