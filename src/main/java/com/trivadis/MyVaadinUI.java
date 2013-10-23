@@ -1,7 +1,5 @@
 package com.trivadis;
 
-import javax.servlet.annotation.WebServlet;
-
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -9,7 +7,9 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.*;
 import com.vaadin.ui.Button.ClickEvent;
-import sun.awt.HorizBagLayout;
+
+import javax.servlet.annotation.WebServlet;
+
 
 @Theme("mytheme")
 @SuppressWarnings("serial")
