@@ -1,8 +1,10 @@
 package com.trivadis.com.trivadis.ch6.trees.ui;
 
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.event.ItemClickEvent;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -51,6 +53,20 @@ public class TreeUI extends UI{
         familyTree.setChildrenAllowed("The Addams", false);
 
 
+
+        familyTree.addItemClickListener(new ItemClickEvent.ItemClickListener() {
+            @Override
+            public void itemClick(ItemClickEvent event) {
+                Notification.show(event.getItemId()+" expanded");
+            }
+        });
+
+        familyTree.addCollapseListener(new Tree.CollapseListener() {
+            @Override
+            public void nodeCollapse(Tree.CollapseEvent event) {
+                Notification.show(event.getItemId()+" collapsed");
+            }
+        });
         vl.addComponent(familyTree);
         setContent(vl);
 }
